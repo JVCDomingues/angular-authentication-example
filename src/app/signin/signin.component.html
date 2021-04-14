@@ -1,0 +1,47 @@
+<div class="container">
+  <p-panel [style]="{'width': '25rem'}" header="Perseus">
+
+    <form [formGroup]="loginForm" (submit)="submitForm()">
+      <div class="p-inputgroup input-container">
+        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+
+        <input  
+          #email
+          type="email" 
+          pInputText 
+          placeholder="E-mail" 
+          formControlName="email" 
+          id="user-email"
+        >
+      </div>
+      <small id="user-email" class="p-error error-message" *ngIf="loginForm.get('email').errors?.required">E-mail is required</small>
+      <small id="user-email" class="p-error error-message" *ngIf="loginForm.get('email').errors?.email">You must enter a valid e-mail</small>
+
+      <div class="p-inputgroup input-container">
+        <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+
+        <input 
+          type="password" 
+          pInputText 
+          placeholder="Password" 
+          formControlName="password"
+          id="password"
+        >
+      </div>
+      <small id="password" class="p-error error-message" *ngIf="loginForm.get('password').errors?.required">Password is required</small>
+      <small id="password" class="p-error error-message" *ngIf="loginForm.get('password').errors?.minLength">Password must be greater than 3 characters</small>
+      
+      <button pButton label="Login" icon="pi pi-sign-in" class="p-button-raised" [disabled]="loginForm.invalid"></button>
+      
+    </form>
+
+    <ng-template pTemplate="footer">
+      <a href="" routerLink="/register" class="register-link">Registrar</a>
+    </ng-template>
+
+  </p-panel>
+
+  <p-messages [(value)]="message">
+
+  </p-messages>
+</div>

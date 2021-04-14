@@ -1,0 +1,26 @@
+<div class="container">
+  <p-panel header="Register" [style]="{'width': '25rem'}">
+    <form [formGroup]="registerForm">
+      <div class="p-inputgroup input-container">
+        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+        <input type="text" pInputText placeholder="Name" formControlName="name">
+      </div>
+  
+      <div class="p-inputgroup input-container">
+        <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+        <input type="text" pInputText placeholder="E-mail" formControlName="email">
+      </div>
+  
+      <div class="p-inputgroup input-container">
+        <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+        <input type="password" pInputText placeholder="Password" formControlName="password">
+      </div>
+    </form>
+
+    <ng-template pTemplate="footer">
+      <button pButton label="Register" type="submit" (click)="handleSubmit()" [disabled]="registerForm.invalid"></button>
+    </ng-template>
+  </p-panel>
+
+  <p-messages severity="error" *ngIf="registerError" [(value)]="message"></p-messages>
+</div>
