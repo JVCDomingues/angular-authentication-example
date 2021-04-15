@@ -1,1 +1,11 @@
 <app-header></app-header>
+
+<div class="container" *ngFor="let project of projects">
+  <p-panel [header]="project.name" class="project-panel">
+    {{ project.description }}
+
+    <ng-template pTemplate="footer">
+      <button pButton label="Learn"></button>
+    </ng-template>
+  </p-panel>
+</div>

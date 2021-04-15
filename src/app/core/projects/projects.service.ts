@@ -14,12 +14,12 @@ export class ProjectsService {
 
   constructor(private http: HttpClient, private tokenService: TokenService) { }
 
-  getProjects(): Observable<Projects[]> {
+  getProjects(): Observable<Projects> {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.tokenService.getToken()}`
     });
 
-    return this.http.get<Projects[]>(this.baseURL, {headers})
+    return this.http.get<Projects>(this.baseURL, { headers })
       .pipe(tap(console.log));
   }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
 
 import { HeaderComponent } from './header/header.component';
 
@@ -13,7 +14,8 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     CommonModule,
     MenubarModule,
-    ButtonModule
+    ButtonModule,
+    DialogModule
   ],
   exports: [
     HeaderComponent

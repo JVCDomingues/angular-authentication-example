@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { PanelModule } from 'primeng/panel';
 
 import { HomeComponent } from './home.component';
 import { SharedModule } from '../shared/shared.module';
@@ -17,6 +18,7 @@ import { SharedModule } from '../shared/shared.module';
     MenubarModule,
     ButtonModule,
     SharedModule,
+    PanelModule,
     InputTextModule
   ]
 })

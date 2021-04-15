@@ -1,3 +1,6 @@
 <p-menubar [model]="menuItems">
-  <button pButton label="Log out" (click)="logOut()"></button>
+  <button pButton label="Log out" (click)="logOut()" [style]="{'margin-right': '5px'}"></button>
 </p-menubar>
+<p-dialog header="Title" [(visible)]="displayDialog">
+  Content
+</p-dialog>

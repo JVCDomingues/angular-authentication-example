@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../core/projects/projects.service';
-import { Projects } from '../types/Project';
+import { Project, Projects } from '../types/Project';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { Projects } from '../types/Project';
 })
 export class HomeComponent implements OnInit {
 
-  projects: Projects[];
+  projects: Project[];
 
   constructor(
     private projectService: ProjectsService,
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.projectService.getProjects()
       .subscribe((data) => {
-        this.projects = data;
+        this.projects = data.projects;
       }, error => {
         console.log(error);
       })

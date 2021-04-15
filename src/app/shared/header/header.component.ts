@@ -14,6 +14,7 @@ import { UserService } from 'src/app/core/user/user.service';
 export class HeaderComponent implements OnInit {
 
   menuItems: MenuItem[];
+  displayDialog: boolean = false;
 
   constructor(
     private userService: UserService,  
@@ -27,6 +28,11 @@ export class HeaderComponent implements OnInit {
       {
         label: `Hello ${username}`,
         icon: 'pi pi-user'  
+      },
+      {
+        label: 'Add project',
+        icon: 'pi pi-plus',
+        command: () => this.showDialog()
       }
     ];
   }
@@ -35,6 +41,10 @@ export class HeaderComponent implements OnInit {
     this.userService.removeUser();
     this.tokenService.removeToken();
     this.router.navigate(['']);
+  }
+
+  showDialog() {
+    this.displayDialog = true;
   }
 
 }

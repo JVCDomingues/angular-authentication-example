@@ -1,11 +1,11 @@
 import { User } from './User';
 
 export interface Projects {
-  projects: Project;
+  projects: Project[];
   user: User;
 }
 
-interface Project {
+export interface Project {
   _id: number;
   name: string;
   description: string;
