@@ -14,7 +14,7 @@ import { UserService } from 'src/app/core/user/user.service';
 export class HeaderComponent implements OnInit {
 
   menuItems: MenuItem[];
-  displayDialog: boolean = false;
+  dialog: boolean = false;
 
   constructor(
     private userService: UserService,  
@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
   }
 
   showDialog() {
-    this.displayDialog = true;
+    this.dialog = !this.dialog;
   }
 
 }

@@ -22,4 +22,12 @@ export class ProjectsService {
     return this.http.get<Projects>(this.baseURL, { headers })
       .pipe(tap(console.log));
   }
+
+  addProject(name: string, description: string) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.tokenService.getToken()}`
+    });
+
+    return this.http.post(this.baseURL, { name, description }, { headers });
+  }
 }

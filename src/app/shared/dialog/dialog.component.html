@@ -1,0 +1,13 @@
+<p-dialog header="Add new project" draggable="false" [(visible)]="displayDialog" resizable="false">
+  <form [formGroup]="projectForm">
+    <input type="text" pInputText placeholder="Project name" formControlName="name" #projectName>
+    <input type="text" pInputText placeholder="Project description" formControlName="description">
+
+    <button pButton label="Add project" icon="pi pi-plus" [disabled]="projectForm.invalid"
+      (click)="addProject()"></button>
+    <button pButton label="Cancel" icon="pi pi-times" class="p-button-outlined" (click)="dialogControl()"></button>
+
+  </form>
+</p-dialog>
+
+<p-messages *ngIf="addProjectError" [(value)]="message"></p-messages>
